@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +7,41 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-
 <body>
-    <header>
-        <nav>
+    <div class="dashboard">
+        <nav class="sidebar">
             <div class="logo">
                 <a href="#">Pankaj Shrestha</a>
             </div>
             <ul>
-                <li><a href="#Project">My Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Project">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Hallo, ich bin Pankaj Shrestha!</h1>
-                <div class="about-container">
-                    <p>- Ich studiere Technische Informatik an der TH Köln.</p>
-                    <p>- Als ein motivierter Student habe ich mir umfangreiche Programmierkenntnisse angeeignet,
-                        insbesondere in Java, das mir als grundlegende Programmiersprache dient.</p>
-                    <p>- Mein Studium ist sehr praxisorientiert und ich habe meine Fähigkeiten in der
-                        Softwareentwicklung durch erfolgreiche Projekte und Praktika unter Beweis gestellt.</p>
-                    <p>- Mit starken analytischen Fähigkeiten und einem tiefen Verständnis von Algorithmen und Computern
-                        strebe ich danach, meine theoretischen Kenntnisse in die Praxis umzusetzen und meine berufliche
-                        Entwicklung voranzutreiben.</p>
+        <div class="main-content">
+            <section class="hero" id="about">
+                <div class="hero-text">
+                    <h1>Hallo, ich bin Pankaj Shrestha!</h1>
+                    <div class="about-container">
+                        <p>- Ich studiere Technische Informatik an der TH Köln.</p>
+                        <p>- Als ein motivierter Student habe ich mir umfangreiche Programmierkenntnisse angeeignet,
+                            insbesondere in Java, das mir als grundlegende Programmiersprache dient.</p>
+                        <p>- Mein Studium ist sehr praxisorientiert und ich habe meine Fähigkeiten in der
+                            Softwareentwicklung durch erfolgreiche Projekte und Praktika unter Beweis gestellt.</p>
+                        <p>- Mit starken analytischen Fähigkeiten und einem tiefen Verständnis von Algorithmen und Computern
+                            strebe ich danach, meine theoretischen Kenntnisse in die Praxis umzusetzen und meine berufliche
+                            Entwicklung voranzutreiben.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="Project">
-            <h2>More Projects coming soon!</h2>
-            <!-- Add your work projects here -->
-        </section>
-    </main>
+            <section id="Project">
+                <h2>More Projects coming soon!</h2>
+                <!-- Add your work projects here -->
+            </section>
+        </div>
+    </div>
 
     <footer>
         <section id="ref">
@@ -66,5 +64,4 @@
     </footer>
     <script src="script.js"></script>
 </body>
-
 </html>
