@@ -2,48 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Pankaj Shrestha</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact — Pankaj Shrestha</title>
+    <meta name="robots" content="noindex">
+    <!-- The contact form now lives on the main page; keep old links working. -->
+    <script>location.replace('index.html' + location.search + '#contact');</script>
+    <meta http-equiv="refresh" content="0; url=index.html#contact">
 </head>
 <body>
-    <div class="dashboard">
-        <nav class="sidebar">
-            <div class="logo">
-                <a href="index.html">Pankaj Shrestha</a>
-            </div>
-            <ul>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#Project">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="main-content">
-            <section id="contact">
-                <div class="container">
-                    <h2>Contact</h2>
-                    <form action="https://formspree.io/f/mjkbvnqn" method="post">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </section>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2024 Pankaj Shrestha. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+    <p><a href="index.html#contact">Contact Pankaj Shrestha</a></p>
 </body>
 </html>
