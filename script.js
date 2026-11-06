@@ -187,23 +187,6 @@
         });
     }
 
-    /* ---------- Reveal on scroll ---------- */
-
-    var revealEls = document.querySelectorAll('.reveal');
-    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if ('IntersectionObserver' in window && !reduceMotion && revealEls.length) {
-        root.classList.add('reveal-ready');
-        var revealer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    revealer.unobserve(entry.target);
-                }
-            });
-        }, { rootMargin: '0px 0px -8% 0px' });
-        revealEls.forEach(function (el) { revealer.observe(el); });
-    }
-
     /* ---------- Contact form (Formspree, without leaving the page) ---------- */
 
     var form = document.querySelector('[data-contact-form]');

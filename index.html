@@ -39,9 +39,10 @@
             if (lang !== 'en') d.classList.add('i18n-pending');
         })();
     </script>
-    <link rel="stylesheet" href="styles.css">
-    <script src="translations.js" defer></script>
-    <script src="script.js" defer></script>
+    <!-- Bump ?v= whenever these files change, so browsers never mix an old file with a new page. -->
+    <link rel="stylesheet" href="styles.css?v=5">
+    <script src="translations.js?v=5" defer></script>
+    <script src="script.js?v=5" defer></script>
 </head>
 <body>
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -51,6 +52,7 @@
         <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></g></symbol>
         <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
         <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
         <symbol id="i-folder" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
         <symbol id="i-award" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></g></symbol>
     </svg>
@@ -66,10 +68,9 @@
 
             <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
                 <ul>
-                    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
                     <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
-                    <li><a href="#education" data-i18n="nav.education">Education</a></li>
                     <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
                     <li><a href="#certificates" data-i18n="nav.certificates">Certificates</a></li>
                     <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
@@ -91,10 +92,10 @@
         </div>
     </header>
 
-    <main id="main">
-        <!-- ============================== Profile (CV: Profil) ============================== -->
-        <section class="hero container" aria-labelledby="hero-title">
-            <div class="hero-text">
+    <main id="main" class="container">
+        <!-- ============================== Profile ============================== -->
+        <section class="bento hero" aria-labelledby="hero-title">
+            <div class="tile tile-intro">
                 <p class="eyebrow" data-i18n="hero.eyebrow">Computer Engineering · OT Security · Cologne</p>
                 <h1 id="hero-title" data-i18n="hero.title">Hi, I'm Pankaj Shrestha.</h1>
                 <p class="lead" data-i18n="hero.lead">Computer engineer with hands-on experience in software development, AI-assisted applications and industrial network security. Bachelor's thesis student in the Cybersecurity / OT Security team of the Process Control Lab (TH Köln), focusing on penetration testing of PROFINET-over-APL networks.</p>
@@ -102,6 +103,34 @@
                     <a class="btn btn-primary" href="#experience" data-i18n="hero.ctaExperience">View experience</a>
                     <a class="btn" href="#contact" data-i18n="hero.ctaContact">Get in touch</a>
                 </div>
+            </div>
+
+            <div class="tile tile-photo hero-photo">
+                <picture>
+                    <source srcset="assets/pankaj-shrestha.webp" type="image/webp">
+                    <img src="assets/pankaj-shrestha.png" width="256" height="256" alt="Portrait of Pankaj Shrestha" data-i18n-attr="alt:hero.photoAlt" fetchpriority="high">
+                </picture>
+            </div>
+
+            <div class="tile tile-now">
+                <p class="tile-label"><span class="live-dot" aria-hidden="true"></span><span data-i18n="hero.nowLabel">Now</span></p>
+                <p class="tile-value" data-i18n="hero.nowValue">Bachelor's thesis · OT Security, PLT Lab TH Köln</p>
+            </div>
+
+            <div class="tile tile-fact">
+                <p class="tile-label" data-i18n="hero.basedLabel">Based in</p>
+                <p class="tile-value" data-i18n="hero.basedValue">Cologne, Germany</p>
+            </div>
+            <div class="tile tile-fact">
+                <p class="tile-label" data-i18n="hero.studyLabel">Studies</p>
+                <p class="tile-value" data-i18n="hero.studyValue">B.Sc. Computer Engineering, TH Köln</p>
+            </div>
+            <div class="tile tile-fact">
+                <p class="tile-label" data-i18n="hero.gradLabel">Graduation</p>
+                <p class="tile-value" data-i18n="hero.gradValue">November 2026</p>
+            </div>
+            <div class="tile tile-fact">
+                <p class="tile-label" data-i18n="hero.linksLabel">Find me on</p>
                 <ul class="socials">
                     <li>
                         <a class="icon-btn" href="https://github.com/itpankajshrestha" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -115,391 +144,318 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="hero-photo">
-                <picture>
-                    <source srcset="assets/pankaj-shrestha.webp" type="image/webp">
-                    <img src="assets/pankaj-shrestha.png" width="256" height="256" alt="Portrait of Pankaj Shrestha" data-i18n-attr="alt:hero.photoAlt" fetchpriority="high">
-                </picture>
-            </div>
-
-            <dl class="highlights">
-                <div>
-                    <dt data-i18n="hero.basedLabel">Based in</dt>
-                    <dd data-i18n="hero.basedValue">Cologne, Germany</dd>
-                </div>
-                <div>
-                    <dt data-i18n="hero.studyLabel">Studies</dt>
-                    <dd data-i18n="hero.studyValue">B.Sc. Computer Engineering · TH Köln</dd>
-                </div>
-                <div>
-                    <dt data-i18n="hero.gradLabel">Graduation</dt>
-                    <dd data-i18n="hero.gradValue">November 2026</dd>
-                </div>
-            </dl>
         </section>
 
-        <!-- ============================== Skills (CV: Technische Kenntnisse) ============================== -->
-        <section class="section" id="skills" aria-labelledby="skills-title">
-            <div class="container">
-                <header class="section-head reveal">
-                    <p class="section-label" data-index="01" data-i18n="skills.label">Skills</p>
-                    <h2 class="section-title" id="skills-title" data-i18n="skills.title">What I work with</h2>
-                </header>
-                <div class="skills-grid">
-                    <div class="skill-group skill-group-accent reveal">
-                        <h3>OT / ICS</h3>
-                        <ul class="chips">
-                            <li>PROFINET (DCP, RT)</li>
-                            <li>Ethernet-APL</li>
-                            <li>NOA</li>
-                            <li data-i18n="skills.greybox">Grey-box pentesting</li>
-                            <li data-i18n="skills.bsi">BSI threat scenarios</li>
-                            <li>Wireshark</li>
-                            <li>Kali Linux</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 data-i18n="skills.languages">Programming languages</h3>
-                        <ul class="chips">
-                            <li>Java (Maven, JUnit, REST, SOAP)</li>
-                            <li>Python</li>
-                            <li>SQL</li>
-                            <li>Bash</li>
-                            <li>JavaScript</li>
-                            <li>C/C++</li>
-                            <li>C#</li>
-                            <li>MATLAB</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 data-i18n="skills.frameworks">Frameworks &amp; libraries</h3>
-                        <ul class="chips">
-                            <li>Spring Boot</li>
-                            <li>Nuxt.js</li>
-                            <li>Flutter</li>
-                            <li>Qt</li>
-                            <li>Android SDK</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3>Tools &amp; DevOps</h3>
-                        <ul class="chips">
-                            <li>Docker</li>
-                            <li>GitHub Actions (CI/CD)</li>
-                            <li>Git</li>
-                            <li>Postman</li>
-                            <li>PuTTY</li>
-                            <li>pgAdmin</li>
-                            <li>Wireshark</li>
-                            <li>Oracle VM</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 data-i18n="skills.cloud">Cloud &amp; deployment</h3>
-                        <ul class="chips">
-                            <li>Google Cloud Platform</li>
-                            <li>Render/Vercel</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 data-i18n="skills.ides">Development environments</h3>
-                        <ul class="chips">
-                            <li>IntelliJ IDEA</li>
-                            <li>PyCharm</li>
-                            <li>Android Studio</li>
-                            <li>Visual Studio</li>
-                            <li>VS Code</li>
-                            <li>Jupyter Notebook</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 data-i18n="skills.os">Operating systems</h3>
-                        <ul class="chips">
-                            <li>Linux (Kali, Ubuntu)</li>
-                            <li>Windows</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group reveal">
-                        <h3 data-i18n="skills.spoken">Languages</h3>
-                        <ul class="chips">
-                            <li data-i18n="skills.german">German (advanced)</li>
-                            <li data-i18n="skills.english">English (advanced)</li>
-                            <li data-i18n="skills.nepali">Nepali (native)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================== Experience (CV: Berufserfahrung) ============================== -->
+        <!-- ============================== Experience ============================== -->
         <section class="section" id="experience" aria-labelledby="experience-title">
-            <div class="container">
-                <header class="section-head reveal">
-                    <p class="section-label" data-index="02" data-i18n="exp.label">Experience</p>
-                    <h2 class="section-title" id="experience-title" data-i18n="exp.title">Where I've worked</h2>
-                </header>
-                <ol class="timeline">
-                    <li class="reveal is-current">
-                        <article class="entry">
-                            <div class="entry-head">
-                                <h3 data-i18n="exp.plt.role">Student Assistant / Bachelor's Thesis — Cybersecurity / OT Security Team, PLT Lab (Process Control Engineering)</h3>
-                                <p class="entry-date" data-i18n="exp.plt.date">Feb 2026 – present</p>
-                            </div>
-                            <p class="entry-org">Technische Hochschule Köln</p>
-                            <ul class="bullets">
-                                <li data-i18n="exp.plt.b1">Analysis of NOA-based industrial architectures (NAMUR Open Architecture) and IT/OT integration</li>
-                                <li data-i18n="exp.plt.b2">Security analysis of PROFINET-over-APL networks as part of my bachelor's thesis (grey-box pentesting)</li>
-                                <li data-i18n="exp.plt.b3">Wireshark-based network traffic analysis (PROFINET DCP/RT) and configuration of industrial network components (Fortigate, Moxa EDR)</li>
-                                <li data-i18n="exp.plt.b4">Mapping BSI threat scenarios onto the test topology to assess information security</li>
-                                <li data-i18n="exp.plt.b5">Reachability tests of PROFINET field devices across firewall boundaries (ICMP, HTTPS) with Moxa EDR for an industry project</li>
-                                <li data-i18n="exp.plt.b6">Comparing the PI Security Design Guideline with NAMUR AK 4.18.3 and the PROFINET specification v2.5; research on Cyber Resilience Act requirements</li>
-                            </ul>
-                            <ul class="tags">
-                                <li>PROFINET</li>
-                                <li>APL</li>
-                                <li>NOA</li>
-                                <li>Wireshark</li>
-                                <li>Fortigate</li>
-                                <li>Moxa EDR</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="reveal">
-                        <article class="entry">
-                            <div class="entry-head">
-                                <h3>Hardware Assistant — Quality &amp; Online Services</h3>
-                                <p class="entry-date" data-i18n="exp.restart.date">Jul 2025 – Feb 2026</p>
-                            </div>
-                            <p class="entry-org" data-i18n="exp.restart.org">Restart GmbH, Cologne</p>
-                            <ul class="bullets">
-                                <li data-i18n="exp.restart.b1">Supporting the quality service team and the authorised service centres</li>
-                                <li data-i18n="exp.restart.b2">Technical handling of hardware returns and spare-part inspection</li>
-                                <li data-i18n="exp.restart.b3">Member of the online sales support team (shop systems, product data)</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="reveal">
-                        <article class="entry">
-                            <div class="entry-head">
-                                <h3 data-i18n="exp.tuv.role">Software Developer — AI (part-time)</h3>
-                                <p class="entry-date" data-i18n="exp.tuv.date">Jan 2025 – May 2025</p>
-                            </div>
-                            <p class="entry-org" data-i18n="exp.tuv.org">TÜV Rheinland, Cologne (via Stud-IT GmbH)</p>
-                            <ul class="bullets">
-                                <li data-i18n="exp.tuv.b1">Development of a Python backend for the automated extraction of relevant data fields from PDFs using Azure Document Intelligence and the OpenAI API</li>
-                                <li data-i18n="exp.tuv.b2">Building prototype AI solutions for document analysis and symbol recognition in architectural drawings</li>
-                                <li data-i18n="exp.tuv.b3">CI/CD automation with GitHub Actions for testing and deployment</li>
-                            </ul>
-                            <ul class="tags">
-                                <li>Python</li>
-                                <li>Azure Document Intelligence</li>
-                                <li>OpenAI API</li>
-                                <li>GitHub Actions</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="reveal">
-                        <article class="entry">
-                            <div class="entry-head">
-                                <h3 data-i18n="exp.hotel.role">Receptionist (part-time)</h3>
-                                <p class="entry-date" data-i18n="exp.hotel.date">Sep 2021 – Dec 2024</p>
-                            </div>
-                            <p class="entry-org" data-i18n="exp.hotel.org">Trip Inn Hotels, Cologne</p>
-                            <ul class="bullets">
-                                <li data-i18n="exp.hotel.b1">Front desk, guest communication and reservation management for more than 80 rooms</li>
-                                <li data-i18n="exp.hotel.b2">Support with junior IT tasks such as WiFi setup and small technical problems, and coordination of online booking systems</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="reveal">
-                        <article class="entry">
-                            <div class="entry-head">
-                                <h3 data-i18n="exp.zenjob.role">Student Worker — Staffing</h3>
-                                <p class="entry-date" data-i18n="exp.zenjob.date">Aug 2020 – Jul 2021</p>
-                            </div>
-                            <p class="entry-org" data-i18n="exp.zenjob.org">Zenjob, Cologne</p>
-                            <ul class="bullets">
-                                <li data-i18n="exp.zenjob.b1">Support with scheduling and staffing across different client assignments</li>
-                                <li data-i18n="exp.zenjob.b2">Gaining first work experience in customer-facing environments</li>
-                            </ul>
-                        </article>
-                    </li>
-                </ol>
+            <header class="section-head">
+                <p class="section-label" data-index="01" data-i18n="exp.label">Experience</p>
+                <h2 class="section-title" id="experience-title" data-i18n="exp.title">Where I've worked</h2>
+            </header>
+            <div class="bento">
+                <article class="tile exp-card span-4">
+                    <div class="entry-head">
+                        <span class="badge"><span class="live-dot" aria-hidden="true"></span><span data-i18n="exp.current">Current</span></span>
+                        <p class="entry-date" data-i18n="exp.plt.date">Feb 2026 – present</p>
+                    </div>
+                    <h3 data-i18n="exp.plt.role">Student Assistant / Bachelor's Thesis — Cybersecurity / OT Security Team, PLT Lab (Process Control Engineering)</h3>
+                    <p class="entry-org">Technische Hochschule Köln</p>
+                    <ul class="bullets bullets-2col">
+                        <li data-i18n="exp.plt.b1">Analysis of NOA-based industrial architectures (NAMUR Open Architecture) and IT/OT integration</li>
+                        <li data-i18n="exp.plt.b2">Security analysis of PROFINET-over-APL networks as part of my bachelor's thesis (grey-box pentesting)</li>
+                        <li data-i18n="exp.plt.b3">Wireshark-based network traffic analysis (PROFINET DCP/RT) and configuration of industrial network components (Fortigate, Moxa EDR)</li>
+                        <li data-i18n="exp.plt.b4">Mapping BSI threat scenarios onto the test topology to assess information security</li>
+                        <li data-i18n="exp.plt.b5">Reachability tests of PROFINET field devices across firewall boundaries (ICMP, HTTPS) with Moxa EDR for an industry project</li>
+                        <li data-i18n="exp.plt.b6">Comparing the PI Security Design Guideline with NAMUR AK 4.18.3 and the PROFINET specification v2.5; research on Cyber Resilience Act requirements</li>
+                    </ul>
+                    <ul class="tags">
+                        <li>PROFINET</li>
+                        <li>APL</li>
+                        <li>NOA</li>
+                        <li>Wireshark</li>
+                        <li>Fortigate</li>
+                        <li>Moxa EDR</li>
+                    </ul>
+                </article>
+
+                <article class="tile exp-card span-2">
+                    <div class="entry-head">
+                        <p class="entry-date" data-i18n="exp.tuv.date">Jan 2025 – May 2025</p>
+                    </div>
+                    <h3 data-i18n="exp.tuv.role">Software Developer — AI (part-time)</h3>
+                    <p class="entry-org" data-i18n="exp.tuv.org">TÜV Rheinland, Cologne (via Stud-IT GmbH)</p>
+                    <ul class="bullets">
+                        <li data-i18n="exp.tuv.b1">Development of a Python backend for the automated extraction of relevant data fields from PDFs using Azure Document Intelligence and the OpenAI API</li>
+                        <li data-i18n="exp.tuv.b2">Building prototype AI solutions for document analysis and symbol recognition in architectural drawings</li>
+                        <li data-i18n="exp.tuv.b3">CI/CD automation with GitHub Actions for testing and deployment</li>
+                    </ul>
+                    <ul class="tags">
+                        <li>Python</li>
+                        <li>Azure Document Intelligence</li>
+                        <li>OpenAI API</li>
+                        <li>GitHub Actions</li>
+                    </ul>
+                </article>
+
+                <article class="tile exp-card span-2">
+                    <div class="entry-head">
+                        <p class="entry-date" data-i18n="exp.restart.date">Jul 2025 – Feb 2026</p>
+                    </div>
+                    <h3>Hardware Assistant — Quality &amp; Online Services</h3>
+                    <p class="entry-org" data-i18n="exp.restart.org">Restart GmbH, Cologne</p>
+                    <ul class="bullets">
+                        <li data-i18n="exp.restart.b1">Supporting the quality service team and the authorised service centres</li>
+                        <li data-i18n="exp.restart.b2">Technical handling of hardware returns and spare-part inspection</li>
+                    </ul>
+                </article>
             </div>
         </section>
 
-        <!-- ============================== Education (CV: Ausbildung) ============================== -->
-        <section class="section" id="education" aria-labelledby="education-title">
-            <div class="container">
-                <header class="section-head reveal">
-                    <p class="section-label" data-index="03" data-i18n="edu.label">Education</p>
-                    <h2 class="section-title" id="education-title" data-i18n="edu.title">Where I studied</h2>
-                </header>
-                <ol class="timeline">
-                    <li class="reveal is-current">
-                        <article class="entry">
-                            <div class="entry-head">
-                                <h3 data-i18n="edu.bsc.role">B.Sc. Computer Engineering (Technische Informatik)</h3>
-                                <p class="entry-date" data-i18n="edu.bsc.date">Sep 2018 – graduation Nov 2026</p>
-                            </div>
-                            <p class="entry-org">Technische Hochschule Köln</p>
-                            <ul class="bullets">
-                                <li data-i18n="edu.bsc.b1">Focus areas: networks and distributed systems; software systems</li>
-                                <li data-i18n="edu.bsc.b2">Relevant courses: system design, software engineering, database management, agile project management, data structures and algorithms</li>
-                                <li data-i18n="edu.bsc.b3">Bachelor's thesis: “Penetration testing to analyse the information security of PROFINET-over-APL networks in a NOA-oriented lab environment” (PLT Lab, TH Köln)</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="reveal">
-                        <article class="entry">
-                            <div class="entry-head">
-                                <h3>T-Kurs &amp; Feststellungsprüfung</h3>
-                                <p class="entry-date" data-i18n="edu.kolleg.date">Aug 2016 – Jun 2017</p>
-                            </div>
-                            <p class="entry-org">Studienkolleg, Ruhr-Universität Bochum</p>
-                            <ul class="bullets">
-                                <li data-i18n="edu.kolleg.b1">University entrance qualification for technical degree programmes in Germany</li>
-                            </ul>
-                        </article>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- ============================== Projects (CV: Projekte) ============================== -->
+        <!-- ============================== Projects ============================== -->
         <section class="section" id="projects" aria-labelledby="projects-title">
-            <div class="container">
-                <header class="section-head reveal">
-                    <p class="section-label" data-index="04" data-i18n="projects.label">Projects</p>
-                    <h2 class="section-title" id="projects-title" data-i18n="projects.title">Selected projects</h2>
-                </header>
-                <ul class="project-grid">
-                    <li class="reveal">
-                        <article class="project-card">
+            <header class="section-head">
+                <p class="section-label" data-index="02" data-i18n="projects.label">Projects</p>
+                <h2 class="section-title" id="projects-title" data-i18n="projects.title">Things I built</h2>
+            </header>
+            <ul class="grid-3">
+                <li>
+                    <article class="tile project-card is-link">
+                        <div class="card-top">
+                            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-github"/></svg>
+                            <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </div>
+                        <h3><a href="https://github.com/itpankajshrestha/selectable-pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.ocr.title">PDF OCR Converter</span></a></h3>
+                        <p class="desc" data-i18n="projects.ocr.desc">Turns scanned PDFs, such as handwritten lecture slides, into selectable and searchable documents with Tesseract OCR. FastAPI web app in Docker, deployed on Render.com.</p>
+                        <ul class="tags">
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>Tesseract</li>
+                            <li>Docker</li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article class="tile project-card is-link">
+                        <div class="card-top">
+                            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-github"/></svg>
+                            <svg class="icon arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                        </div>
+                        <h3><a href="https://github.com/itpankajshrestha/mini-task-logger" target="_blank" rel="noopener noreferrer">Mini Task Logger</a></h3>
+                        <p class="desc" data-i18n="projects.logger.desc">Small web app for logging tasks. Tasks are stored in the browser with IndexedDB (Dexie) and listed newest first.</p>
+                        <ul class="tags">
+                            <li>Vue 3</li>
+                            <li>Vite</li>
+                            <li>Tailwind CSS</li>
+                            <li>IndexedDB</li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article class="tile project-card is-link">
+                        <div class="card-top">
+                            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-github"/></svg>
+                            <span class="badge badge-muted" data-i18n="projects.wip">In progress</span>
+                        </div>
+                        <h3><a href="https://github.com/itpankajshrestha/OpenPDF" target="_blank" rel="noopener noreferrer">OpenPDF</a></h3>
+                        <p class="desc" data-i18n="projects.openpdf.desc">PDF toolkit: a FastAPI backend for uploading and merging PDFs with an OpenAI chat endpoint, plus a Nuxt frontend and a Docker Compose setup.</p>
+                        <ul class="tags">
+                            <li>FastAPI</li>
+                            <li>Nuxt</li>
+                            <li>OpenAI API</li>
+                            <li>Docker</li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article class="tile project-card">
+                        <div class="card-top">
                             <svg class="icon icon-lg" aria-hidden="true"><use href="#i-folder"/></svg>
-                            <h3 data-i18n="projects.bank.title">Bank Management System</h3>
-                            <p class="desc" data-i18n="projects.bank.desc">CLI system with an admin panel and transaction features, including unit tests.</p>
-                            <ul class="tags">
-                                <li>Java</li>
-                                <li>Maven</li>
-                                <li>JUnit</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="reveal">
-                        <article class="project-card">
+                        </div>
+                        <h3 data-i18n="projects.bank.title">Bank Management System</h3>
+                        <p class="desc" data-i18n="projects.bank.desc">CLI system with an admin panel and transaction features, including unit tests.</p>
+                        <ul class="tags">
+                            <li>Java</li>
+                            <li>Maven</li>
+                            <li>JUnit</li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article class="tile project-card">
+                        <div class="card-top">
                             <svg class="icon icon-lg" aria-hidden="true"><use href="#i-folder"/></svg>
-                            <h3 data-i18n="projects.weather.title">Weather App</h3>
-                            <p class="desc" data-i18n="projects.weather.desc">Real-time weather app using the Observer and Strategy patterns for better modularity.</p>
-                            <ul class="tags">
-                                <li>Java</li>
-                                <li>Android</li>
-                                <li>SQL</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="reveal">
-                        <article class="project-card">
+                        </div>
+                        <h3 data-i18n="projects.weather.title">Weather App</h3>
+                        <p class="desc" data-i18n="projects.weather.desc">Real-time weather app using the Observer and Strategy patterns for better modularity.</p>
+                        <ul class="tags">
+                            <li>Java</li>
+                            <li>Android</li>
+                            <li>SQL</li>
+                        </ul>
+                    </article>
+                </li>
+                <li>
+                    <article class="tile project-card">
+                        <div class="card-top">
                             <svg class="icon icon-lg" aria-hidden="true"><use href="#i-folder"/></svg>
-                            <h3>Flutter OpenFoodFacts App</h3>
-                            <p class="desc" data-i18n="projects.flutter.desc">Mobile app that displays nutrition data from the OpenFoodFacts API, built with Clean Architecture.</p>
-                            <ul class="tags">
-                                <li>Dart</li>
-                                <li>MVVM</li>
-                            </ul>
-                        </article>
-                    </li>
-                    <li class="reveal">
-                        <article class="project-card">
-                            <svg class="icon icon-lg" aria-hidden="true"><use href="#i-folder"/></svg>
-                            <h3 data-i18n="projects.ocr.title">PDF OCR Converter</h3>
-                            <p class="desc" data-i18n="projects.ocr.desc">Automated OCR-based PDF conversion with deployment via Render.com.</p>
-                            <ul class="tags">
-                                <li>Python</li>
-                                <li>Tesseract</li>
-                                <li>GitHub CI/CD</li>
-                            </ul>
-                        </article>
-                    </li>
-                </ul>
-            </div>
+                        </div>
+                        <h3>Flutter OpenFoodFacts App</h3>
+                        <p class="desc" data-i18n="projects.flutter.desc">Mobile app that displays nutrition data from the OpenFoodFacts API, built with Clean Architecture.</p>
+                        <ul class="tags">
+                            <li>Dart</li>
+                            <li>MVVM</li>
+                        </ul>
+                    </article>
+                </li>
+            </ul>
         </section>
 
-        <!-- ============================== Certificates & interests (CV: Zertifikate, Interessen) ============================== -->
-        <section class="section" id="certificates" aria-labelledby="certificates-title">
-            <div class="container">
-                <header class="section-head reveal">
-                    <p class="section-label" data-index="05" data-i18n="certs.label">Certificates</p>
-                    <h2 class="section-title" id="certificates-title" data-i18n="certs.title">Certificates &amp; interests</h2>
-                </header>
-                <div class="certs-grid">
-                    <div>
-                        <h3 class="sub-title reveal" data-i18n="certs.list">Certificates</h3>
-                        <ul class="certs reveal">
-                            <li>
-                                <svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>
-                                <div>
-                                    <p class="cert-name">Fortinet Certified Fundamentals — Cybersecurity</p>
-                                    <p class="cert-meta">Fortinet · 2026</p>
-                                </div>
-                            </li>
-                            <li>
-                                <svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>
-                                <div>
-                                    <p class="cert-name">PCEP™ — Certified Entry-Level Python Programmer</p>
-                                    <p class="cert-meta">Python Institute / Cisco Networking Academy · 2025</p>
-                                </div>
-                            </li>
-                            <li>
-                                <svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>
-                                <div>
-                                    <p class="cert-name">Oracle Cloud Infrastructure 2025 AI Foundations Associate</p>
-                                    <p class="cert-meta">Oracle University · 2025</p>
-                                </div>
-                            </li>
-                            <li>
-                                <svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>
-                                <div>
-                                    <p class="cert-name">Cybersecurity Essentials</p>
-                                    <p class="cert-meta">Cisco Networking Academy · 2023</p>
-                                </div>
-                            </li>
-                            <li>
-                                <svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>
-                                <div>
-                                    <p class="cert-name">English for Engineering</p>
-                                    <p class="cert-meta">TH Köln</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="sub-title reveal" data-i18n="interests.list">Interests</h3>
-                        <div class="skill-group reveal">
-                            <ul class="chips">
-                                <li data-i18n="interests.ai">Automation &amp; AI tools</li>
-                                <li data-i18n="interests.tech">Exploring new technologies</li>
-                                <li data-i18n="interests.games">Strategy games (MOBA, MMORPG)</li>
-                                <li data-i18n="interests.food">Asian cuisine</li>
-                                <li data-i18n="interests.hiking">Hiking</li>
-                            </ul>
-                        </div>
-                    </div>
+        <!-- ============================== Skills ============================== -->
+        <section class="section" id="skills" aria-labelledby="skills-title">
+            <header class="section-head">
+                <p class="section-label" data-index="03" data-i18n="skills.label">Skills</p>
+                <h2 class="section-title" id="skills-title" data-i18n="skills.title">What I work with</h2>
+            </header>
+            <div class="bento bento-dense">
+                <div class="tile skill-tile tile-accent span-2">
+                    <h3>OT / ICS</h3>
+                    <ul class="chips">
+                        <li>PROFINET (DCP, RT)</li>
+                        <li>Ethernet-APL</li>
+                        <li>NOA</li>
+                        <li data-i18n="skills.greybox">Grey-box pentesting</li>
+                        <li data-i18n="skills.bsi">BSI threat scenarios</li>
+                        <li>Wireshark</li>
+                        <li>Kali Linux</li>
+                    </ul>
+                </div>
+                <div class="tile skill-tile span-2">
+                    <h3 data-i18n="skills.languages">Programming languages</h3>
+                    <ul class="chips">
+                        <li>Java (Maven, JUnit, REST, SOAP)</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Bash</li>
+                        <li>JavaScript</li>
+                        <li>C/C++</li>
+                        <li>C#</li>
+                        <li>MATLAB</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+                <div class="tile skill-tile">
+                    <h3 data-i18n="skills.frameworks">Frameworks &amp; libraries</h3>
+                    <ul class="chips">
+                        <li>Spring Boot</li>
+                        <li>Nuxt.js</li>
+                        <li>Flutter</li>
+                        <li>Qt</li>
+                        <li>Android SDK</li>
+                    </ul>
+                </div>
+                <div class="tile skill-tile span-2">
+                    <h3>Tools &amp; DevOps</h3>
+                    <ul class="chips">
+                        <li>Docker</li>
+                        <li>GitHub Actions (CI/CD)</li>
+                        <li>Git</li>
+                        <li>Postman</li>
+                        <li>PuTTY</li>
+                        <li>pgAdmin</li>
+                        <li>Wireshark</li>
+                        <li>Oracle VM</li>
+                    </ul>
+                </div>
+                <div class="tile skill-tile">
+                    <h3 data-i18n="skills.cloud">Cloud &amp; deployment</h3>
+                    <ul class="chips">
+                        <li>Google Cloud Platform</li>
+                        <li>Render/Vercel</li>
+                    </ul>
+                </div>
+                <div class="tile skill-tile span-2">
+                    <h3 data-i18n="skills.ides">Development environments</h3>
+                    <ul class="chips">
+                        <li>IntelliJ IDEA</li>
+                        <li>PyCharm</li>
+                        <li>Android Studio</li>
+                        <li>Visual Studio</li>
+                        <li>VS Code</li>
+                        <li>Jupyter Notebook</li>
+                    </ul>
+                </div>
+                <div class="tile skill-tile">
+                    <h3 data-i18n="skills.os">Operating systems</h3>
+                    <ul class="chips">
+                        <li>Linux (Kali, Ubuntu)</li>
+                        <li>Windows</li>
+                    </ul>
+                </div>
+                <div class="tile skill-tile">
+                    <h3 data-i18n="skills.spoken">Languages</h3>
+                    <ul class="chips">
+                        <li data-i18n="skills.german">German (advanced)</li>
+                        <li data-i18n="skills.english">English (advanced)</li>
+                        <li data-i18n="skills.nepali">Nepali (native)</li>
+                    </ul>
                 </div>
             </div>
+        </section>
+
+        <!-- ============================== Certificates & interests ============================== -->
+        <section class="section" id="certificates" aria-labelledby="certificates-title">
+            <header class="section-head">
+                <p class="section-label" data-index="04" data-i18n="certs.label">Certificates</p>
+                <h2 class="section-title" id="certificates-title" data-i18n="certs.title">Certificates &amp; interests</h2>
+            </header>
+            <ul class="grid-3">
+                <li class="tile cert-tile">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#i-award"/></svg>
+                    <p class="cert-name">Fortinet Certified Fundamentals — Cybersecurity</p>
+                    <p class="cert-meta">Fortinet · 2026</p>
+                </li>
+                <li class="tile cert-tile">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#i-award"/></svg>
+                    <p class="cert-name">PCEP™ — Certified Entry-Level Python Programmer</p>
+                    <p class="cert-meta">Python Institute / Cisco Networking Academy · 2025</p>
+                </li>
+                <li class="tile cert-tile">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#i-award"/></svg>
+                    <p class="cert-name">Oracle Cloud Infrastructure 2025 AI Foundations Associate</p>
+                    <p class="cert-meta">Oracle University · 2025</p>
+                </li>
+                <li class="tile cert-tile">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#i-award"/></svg>
+                    <p class="cert-name">Cybersecurity Essentials</p>
+                    <p class="cert-meta">Cisco Networking Academy · 2023</p>
+                </li>
+                <li class="tile cert-tile">
+                    <svg class="icon icon-lg" aria-hidden="true"><use href="#i-award"/></svg>
+                    <p class="cert-name">English for Engineering</p>
+                    <p class="cert-meta">TH Köln</p>
+                </li>
+                <li class="tile skill-tile tile-accent">
+                    <h3 data-i18n="interests.list">Interests</h3>
+                    <ul class="chips">
+                        <li data-i18n="interests.ai">Automation &amp; AI tools</li>
+                        <li data-i18n="interests.tech">Exploring new technologies</li>
+                        <li data-i18n="interests.games">Strategy games (MOBA, MMORPG)</li>
+                        <li data-i18n="interests.food">Asian cuisine</li>
+                        <li data-i18n="interests.hiking">Hiking</li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <!-- ============================== Contact ============================== -->
         <section class="section" id="contact" aria-labelledby="contact-title">
-            <div class="container contact-grid">
-                <div class="reveal">
-                    <header class="section-head">
-                        <p class="section-label" data-index="06" data-i18n="contact.label">Contact</p>
-                        <h2 class="section-title" id="contact-title" data-i18n="contact.title">Let's talk</h2>
-                    </header>
+            <header class="section-head">
+                <p class="section-label" data-index="05" data-i18n="contact.label">Contact</p>
+                <h2 class="section-title" id="contact-title" data-i18n="contact.title">Let's talk</h2>
+            </header>
+            <div class="bento">
+                <div class="tile span-2 contact-info">
                     <p class="section-intro" data-i18n="contact.intro">Questions, ideas, or want to talk about OT security, software or AI? Send me a message or find me on LinkedIn.</p>
                     <ul class="contact-links">
                         <li>
@@ -517,7 +473,7 @@
                     </ul>
                 </div>
 
-                <form class="contact-form reveal" action="https://formspree.io/f/mjkbvnqn" method="post" data-contact-form>
+                <form class="tile span-2 contact-form" action="https://formspree.io/f/mjkbvnqn" method="post" data-contact-form>
                     <input type="hidden" name="_subject" value="New message from your portfolio">
                     <div class="field">
                         <label for="name"><span data-i18n="contact.name">Name</span> <span class="req" aria-hidden="true">*</span></label>
@@ -529,7 +485,7 @@
                     </div>
                     <div class="field">
                         <label for="message"><span data-i18n="contact.message">Message</span> <span class="req" aria-hidden="true">*</span></label>
-                        <textarea id="message" name="message" rows="6" required placeholder="What would you like to talk about?" data-i18n-attr="placeholder:contact.messagePlaceholder"></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder="What would you like to talk about?" data-i18n-attr="placeholder:contact.messagePlaceholder"></textarea>
                     </div>
                     <div class="hp" aria-hidden="true">
                         <label for="gotcha">Leave this field empty</label>
